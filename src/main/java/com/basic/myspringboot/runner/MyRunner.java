@@ -30,7 +30,7 @@ public class MyRunner implements ApplicationRunner {
         System.out.println("myboot.age = "+age);
         System.out.println("myboot.fullName = "+fullName);
 
-        System.out.println("git test");
+        System.out.println(">>>>git test");
 
         System.out.println("VM Argument foo = "+args.containsOption("foo"));
         System.out.println("Program Argument bar = "+args.containsOption("bar"));
