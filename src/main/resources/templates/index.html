@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<body>
+<table>
+    <tr>
+        <th>Seq</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>CreatedAt</th>
+        <th>수정</th>
+        <th>삭제</th>
+    </tr>
+    <tr th:each="user,userStat : ${users}">
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${#temporals.format(user.createdAt,'yyyy-MM-dd hh:mm')}"></td>
+        <td><a th:href="@{/userspage/edit/{id}(id=${user.id})}">update</a></td>
+        <td><a th:href="@{/userspage/delete/{id}(id=${user.id})}">delete</a></td>
+    </tr>
+</table>
+<p><a href="/userspage/signup">등록</a></p>
+</body>
+</html>
